@@ -21,4 +21,6 @@ class PersonTest < Minitest::Test
     assert_equal message2, person2.message
   end
 
+  
+
 end
