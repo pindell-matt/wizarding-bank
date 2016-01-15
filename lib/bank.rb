@@ -11,7 +11,7 @@ class Bank
   end
 
   def open_account(person)
-    "An account has been opened for #{person.name} with #{bank.name}."
+    "An account has been opened for #{person.name} with #{name}."
   end
 
 end

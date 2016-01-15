@@ -27,10 +27,10 @@ class BankTest < Minitest::Test
   def test_can_open_account
     chase = Bank.new("JP Morgan Chase")
     person1 = Person.new("Minerva", 1000)
-    chase.open_account(person1)
-    message = "An account has been opened for Minerva with JP Chase."
+    submitted = chase.open_account(person1)
+    message = "An account has been opened for Minerva with JP Morgan Chase."
 
-    assert_equal message, chase.open_account
+    assert_equal message, submitted
   end
 
 end
