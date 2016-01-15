@@ -23,4 +23,12 @@ class Bank
     "#{amount} galleons have been deposited into #{person.name}'s #{name} account. Balance: #{amount} Cash: #{person.galleons}"
   end
 
+  def withdrawal(person, amount)
+    # denied = "insufficient funds"
+    # return denied if amount < person.galleons
+    person.galleons = person.galleons + amount
+    name = @name.split[2]
+    "#{person.name} has withdrawn #{amount} galleons. Balance: #{person.galleons}"
+  end
+
 end
