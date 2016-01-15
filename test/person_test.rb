@@ -11,7 +11,12 @@ class PersonTest < Minitest::Test
     assert_equal "Minerva", person1.name
   end
 
+  def test_person_initializes_with_message
+    person1 = Person.new("Minerva", 1000)
+    message = "Minerva has been created with 1000 galleons in cash."
 
+    assert_equal message, person1.message
+  end
 end
 
 #
