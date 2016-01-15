@@ -33,4 +33,13 @@ class BankTest < Minitest::Test
     assert_equal message, submitted
   end
 
+  def test_bank_can_accept_deposit
+    chase = Bank.new("JP Morgan Chase")
+    person1 = Person.new("Minerva", 1000)
+    submitted = chase.deposit(person1, 750)
+    message = "750 galleons have been deposited into Minerva's Chase account. Balance: 750 Cash: 250"
+
+    assert_equal message, submitted
+  end
+
 end
