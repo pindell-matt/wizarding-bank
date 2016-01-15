@@ -42,4 +42,13 @@ class BankTest < Minitest::Test
     assert_equal message, submitted
   end
 
+  def test_bank_can_rejects_bad_deposit
+    chase = Bank.new("JP Morgan Chase")
+    person1 = Person.new("Minerva", 1000)
+    submitted =  chase.deposit(person1, 5000)
+    message = "Minerva does not have enough cash to perform this deposit."
+
+    assert_equal message, submitted
+  end
+
 end

@@ -16,6 +16,8 @@ class Bank
   end
 
   def deposit(person, amount)
+    denied = "#{person.name} does not have enough cash to perform this deposit."
+    return denied if amount > person.galleons
     person.galleons = person.galleons - amount
     name = @name.split[2]
     "#{amount} galleons have been deposited into #{person.name}'s #{name} account. Balance: #{amount} Cash: #{person.galleons}"
