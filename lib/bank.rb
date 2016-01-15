@@ -5,4 +5,8 @@ class Bank
     @name = name
   end
 
+  def message
+    "#{name} has been created."
+  end
+
 end
