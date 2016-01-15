@@ -52,8 +52,9 @@ class BankTest < Minitest::Test
   end
 
   def test_bank_can_process_withdrawal
+    skip
     chase = Bank.new("JP Morgan Chase")
-    person1 = Person.new("Minerva", 0)
+    person1 = Person.new("Minerva", 500)
     submitted = chase.withdrawal(person1, 250)
     message = "Minerva has withdrawn 250 galleons. Balance: 250"
 

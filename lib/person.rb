@@ -1,11 +1,12 @@
 
 class Person
   attr_reader :name
-  attr_accessor :galleons
+  attr_accessor :galleons, :balance
 
   def initialize(name, galleons)
     @name = name
     @galleons = galleons
+    @balance = 0
     puts message
   end
 

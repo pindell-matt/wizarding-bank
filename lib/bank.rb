@@ -19,16 +19,17 @@ class Bank
     denied = "#{person.name} does not have enough cash to perform this deposit."
     return denied if amount > person.galleons
     person.galleons = person.galleons - amount
+    person.balance = person.balance + amount
     name = @name.split[2]
-    "#{amount} galleons have been deposited into #{person.name}'s #{name} account. Balance: #{amount} Cash: #{person.galleons}"
+    "#{amount} galleons have been deposited into #{person.name}'s #{name} account. Balance: #{person.balance} Cash: #{person.galleons}"
   end
 
   def withdrawal(person, amount)
-    # denied = "insufficient funds"
-    # return denied if amount < person.galleons
+    denied = "insufficient funds"
+    return denied if amount > person.balance
     person.galleons = person.galleons + amount
     name = @name.split[2]
-    "#{person.name} has withdrawn #{amount} galleons. Balance: #{person.galleons}"
+    "#{person.name} has withdrawn #{amount} galleons. Balance: #{person.balance}"
   end
 
 end
